@@ -1,0 +1,19 @@
+{
+  "payment_method":"CARD",
+  "amount":"20000",
+  "currency":"EUR",
+  "external_transaction_id":65725434,
+  "card_data":{
+    "card_number":"4102778822334893",
+    "exp_date":"11/23",
+    "cvv":"566"
+  },
+  "language":"en",
+  "notification_url":"https://proselyte.net/webhook/payout",
+  "customer":{
+    "first_name":"John",
+    "last_name":"Doe",
+    "country":"BR"
+  },
+  "merchant_id": 1
+}

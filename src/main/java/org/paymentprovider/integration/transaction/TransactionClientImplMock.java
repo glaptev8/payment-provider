@@ -10,12 +10,12 @@ import reactor.core.publisher.Mono;
 
 @Service
 @Slf4j
-@Profile("dev")
+@Profile({"dev || test || mock"})
 public class TransactionClientImplMock implements TransactionClient {
 
   @Override
   public Mono<WebHookTransactionResponse> notify(WebHookTransactionRequest request) {
-    log.info("requesting webhook transaction");
+    log.info("requesting webhook transaction {}", request);
     return Mono.just(new WebHookTransactionResponse());
   }
 }

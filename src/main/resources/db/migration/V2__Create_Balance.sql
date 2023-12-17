@@ -11,9 +11,5 @@ create table if not exists balance (
         unique (merchant_id, currency)
 );
 
-alter table balance
-    owner to postgres;
-
 create index if not exists balance_merchant_id_index
     on balance(merchant_id);
-

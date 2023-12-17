@@ -10,14 +10,13 @@ import org.springframework.stereotype.Service;
 import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Mono;
 
-@Service
 @Slf4j
-@Profile("dev")
+@Service
+@Profile({"dev || test || mock"})
 public class PayOutClientImplMock implements PayOutClient {
-
   @Override
   public Mono<WebHookPayOutResponse> notify(WebHookPayOutRequest request) {
-    log.info("requesting webhook transaction");
+    log.info("requesting webhook payout {}", request);
     return Mono.just(new WebHookPayOutResponse());
   }
 }

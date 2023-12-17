@@ -4,26 +4,18 @@ spring:
     hibernate:
       ddl-auto: create
   r2dbc:
-    url: r2dbc:pool:postgres://localhost:5432/postgres
-    username: postgres
-    password: postgres
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
   flyway:
-    url: jdbc:postgresql://localhost:5432/postgres
-    user: postgres
-    password: postgres
+    url: ${FLYWAY_DATASOURCE_URL}
+    user: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
   profiles:
-    active: dev
-  jackson:
-    property-naming-strategy: SNAKE_CASE
+    active: mock
 
 server:
   port: 8082
-
-logging:
-  level:
-    org:
-      springframework:
-        security: DEBUG
 
 integration:
   transaction-property:

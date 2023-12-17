@@ -6,8 +6,11 @@ import java.time.LocalDateTime;
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 
+import org.paymentprovider.deserializer.ExpLocalDateDeserializer;
+
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,7 +21,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class TransactionDto {
-  @JsonProperty("transactionId")
+  @JsonProperty("transaction_id")
   private Long id;
   private String paymentMethod;
   private BigDecimal amount;
@@ -51,7 +54,8 @@ public class TransactionDto {
   public static class CardData {
     private String cardNumber;
     private String cvv;
-    @JsonFormat(pattern = "yy/MM")
+    @JsonFormat(pattern = "MM/yy")
+    @JsonDeserialize(using = ExpLocalDateDeserializer.class)
     private LocalDate expDate;
   }
 }

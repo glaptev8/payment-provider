@@ -1,6 +1,7 @@
 package org.paymentprovider.integration.payout;
 
 
+import java.time.Duration;
 import java.util.HashMap;
 
 import org.paymentprovider.config.IntegrationConfig;
@@ -16,11 +17,12 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Mono;
+import reactor.util.retry.Retry;
 
 @Slf4j
 @Service
-@Profile("!dev")
 @RequiredArgsConstructor
+@Profile("!dev && !test && !mock")
 public class PayOutClientImpl implements PayOutClient {
 
   private final Sender sender;
@@ -28,6 +30,7 @@ public class PayOutClientImpl implements PayOutClient {
 
   @Override
   public Mono<WebHookPayOutResponse> notify(WebHookPayOutRequest request) {
+    log.info("requesting webhook payout {}", request);
     var headers = new HttpHeaders();
 
     integrationConfig
@@ -39,6 +42,7 @@ public class PayOutClientImpl implements PayOutClient {
                        request,
                        new HashMap<>(),
                        headers,
-                       WebHookPayOutResponse.class);
+                       WebHookPayOutResponse.class)
+      .retryWhen(Retry.backoff(3, Duration.ofMinutes(1)));
   }
 }
