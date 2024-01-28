@@ -3,6 +3,7 @@ package org.paymentprovider.dto;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+import org.leantech.common.dto.TransactionStatusType;
 import org.paymentprovider.dto.WebHookPayOutRequest.Customer;
 
 import lombok.Data;

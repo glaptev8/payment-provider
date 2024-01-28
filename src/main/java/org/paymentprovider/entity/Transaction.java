@@ -6,9 +6,9 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Map;
 
+import org.leantech.common.dto.TransactionStatusType;
 import org.paymentprovider.deserializer.ExpLocalDateDeserializer;
 import org.paymentprovider.dto.CurrencyType;
-import org.paymentprovider.dto.TransactionStatusType;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 

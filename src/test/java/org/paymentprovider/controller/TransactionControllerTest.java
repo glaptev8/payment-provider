@@ -5,9 +5,9 @@ import java.util.List;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.leantech.common.dto.TransactionStatusType;
 import org.paymentprovider.config.TestContainerConfig;
 import org.paymentprovider.dto.TransactionDto;
-import org.paymentprovider.dto.TransactionStatusType;
 import org.paymentprovider.entity.Merchant;
 import org.paymentprovider.entity.Transaction;
 import org.paymentprovider.mapper.MapStructMapper;

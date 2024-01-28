@@ -3,14 +3,13 @@ package org.paymentprovider.dto;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.YearMonth;
-import java.time.format.DateTimeFormatter;
 
 import org.paymentprovider.deserializer.ExpLocalDateDeserializer;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import org.leantech.common.dto.TransactionStatusType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

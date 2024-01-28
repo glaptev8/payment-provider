@@ -3,8 +3,8 @@ package org.paymentprovider.entity;
 import java.math.BigDecimal;
 import java.util.Map;
 
+import org.leantech.common.dto.PayOutStatusType;
 import org.paymentprovider.dto.CurrencyType;
-import org.paymentprovider.dto.PayOutStatusType;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 

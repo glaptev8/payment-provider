@@ -1,8 +1,6 @@
 package org.paymentprovider.controller;
 
 import org.paymentprovider.dto.ErrorResponse;
-import org.paymentprovider.dto.TransactionResponse;
-import org.paymentprovider.dto.TransactionStatusType;
 import org.paymentprovider.exception.AccountException;
 import org.paymentprovider.exception.BalanceException;
 import org.paymentprovider.exception.CredentialsNotPassedException;

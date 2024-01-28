@@ -1,7 +1,7 @@
 package org.paymentprovider.service;
 
+import org.leantech.common.dto.TransactionStatusType;
 import org.paymentprovider.dto.TransactionSearchFilter;
-import org.paymentprovider.dto.TransactionStatusType;
 import org.paymentprovider.entity.Transaction;
 import org.paymentprovider.integration.transaction.TransactionClient;
 import org.paymentprovider.mapper.MapStructMapper;

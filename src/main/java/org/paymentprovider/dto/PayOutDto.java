@@ -2,6 +2,7 @@ package org.paymentprovider.dto;
 
 import java.math.BigDecimal;
 
+import org.leantech.common.dto.PayOutStatusType;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

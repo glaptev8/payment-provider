@@ -1,7 +1,7 @@
 package org.paymentprovider.service;
 
+import org.leantech.common.dto.PayOutStatusType;
 import org.paymentprovider.dto.PayOutSearchFilter;
-import org.paymentprovider.dto.PayOutStatusType;
 import org.paymentprovider.entity.PayOut;
 import org.paymentprovider.integration.payout.PayOutClient;
 import org.paymentprovider.mapper.MapStructMapper;
